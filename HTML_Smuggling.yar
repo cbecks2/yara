@@ -1,6 +1,6 @@
 rule HTML_Smuggling {
     meta:
-        description = "Created to detect possible smuggling of an ISO inside of an HTML attachment. Sometimes it will also catch an HTML dropper."
+        description = "Created to detect possible smuggling of an ISO, VHD, or VHDX inside of an HTML attachment. Sometimes it will also catch an HTML dropper."
         author = "@cbecks_2"
         reference = "ASyncRat Delivery January 2022"
         date = "2022-01-05"
