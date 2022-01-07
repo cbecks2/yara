@@ -17,10 +17,10 @@ rule HTML_Smuggling {
         $a5 = "</body>" ascii
         $a6 = "</html>" ascii
         
-        $b1 = ".ISO" ascii wide nocase
+        $b1 = ".ISO\"" ascii wide nocase
         $b2 = "CD001" base64 base64wide // this may get some false positives due to string length
         $b3 = { 43 44 30 30 31 } // hex of CD001
-        $b4 = ".vhd" ascii wide nocase
+        $b4 = ".vhd\"" ascii wide nocase
         $b5 = "conectix" ascii wide nocase // ascii in VHD File Signature
         $b6 = { 63 6F 6E 65 63 74 69 78 } // hex of VHD
         $b7 = "vhdxfile" ascii wide nocase // ascii in VHDX File Signature
