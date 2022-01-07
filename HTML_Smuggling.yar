@@ -22,23 +22,31 @@ rule HTML_Smuggling {
         $b3 = { 43 44 30 30 31 } // hex of CD001
         $b4 = ".vhd\"" ascii wide nocase
         $b5 = "conectix" ascii wide nocase // ascii in VHD File Signature
-        $b6 = { 63 6F 6E 65 63 74 69 78 } // hex of VHD
-        $b7 = "vhdxfile" ascii wide nocase // ascii in VHDX File Signature
-        $b8 = { 76 68 64 78 66 69 6C 65 } // hex of VHDX
+        $b6 = "conectix" base64 base64wide // ascii in VHD File Signature
+        $b7 = { 63 6F 6E 65 63 74 69 78 } // hex of VHD File Signature
+        $b8 = "vhdxfile" ascii wide nocase // ascii in VHDX File Signature
+        $b9 = "vhdxfile" base64 base64wide // ascii in VHDX File Signature
+        $b10 = { 76 68 64 78 66 69 6C 65 } // hex of VHDX of File Signature
 
         $c1 = "The file has been uploaded successfully," ascii
         $c2 = "this.base64ToBlob = base64ToBlob;" ascii
         $c3 = "a.href = window.URL.createObjectURL(blob, {type: \"application/octet-stream\"});" ascii
         $c4 = "System.Threading.Thread" base64 base64wide
         $c5 = ".vbs" base64 base64wide
-        $c6 = ".js" base64 base64wide
-        $c7 = ".lnk" base64 base64wide
-        $c8 = ".hta" base64 base64wide
-        $c9 = ".exe" base64 base64wide
-        $c10 = "    var data =" ascii
-        $c11 = "DropFileName = \"" ascii
-        $c12 = "4D5A" ascii wide nocase
-        $c13 = "4D5A" base64 base64wide
+        $c6 = ".VBS" base64 base64wide
+        $c7 = ".js" base64 base64wide
+        $c8 = ".JS" base64 base64wide
+        $c9 = ".lnk" base64 base64wide
+        $c10 = ".LNK" base64 base64wide
+        $c11 = ".hta" base64 base64wide
+        $c12 = ".HTA" base64 base64wide
+        $c13 = ".exe" base64 base64wide
+        $c14 = ".EXE" base64 base64wide
+        $c15 = "    var data =" ascii
+        $c16 = "DropFileName = \"" ascii
+        $c17 = "4D5A" ascii wide nocase
+        $c18 = "4D5A" base64 base64wide
+
       
     condition:
         filesize < 500KB and all of ($a*) and any of ($b*) and any of ($c*)
