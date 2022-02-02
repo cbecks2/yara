@@ -1,4 +1,4 @@
-rule zip_unix_63_indrik_spider_feb_22
+rule zip_unix_63_indrik_spider_feb_2
 {
     meta:
         author = "@cbecks_2"
