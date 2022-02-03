@@ -4,7 +4,7 @@ rule zip_unix_63_indrik_spider_feb_22
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-02-02"
-        desc = "Detect zips created by unix v6.3 and out of the Indrik Spider Feb 2022 Campaign. Credit to Tyler McLellan for the base rule."
+        desc = "Detect zips created by unix v6.3 and out of the Indrik Spider Feb 2022 Campaign. Credit to Tyler Mclellan for the base rule."
     strings:
         $header = {504B01023F0314}
         $a1 = {43 68 72 6f 6d 65 2e} //Chrome.
@@ -16,6 +16,5 @@ rule zip_unix_63_indrik_spider_feb_22
         $ext = {2e 6a 73} //.js
 
     condition:
-        uint16be(0) == 0x504B and @header[1] and filesize < 200KB and any of ($a*) and ($ext)
-
+        uint16be(0) == 0x504B and @header[1] > filesize - 200 and filesize < 200KB and #header == 1 and any of ($a*) and ($ext)
 }
