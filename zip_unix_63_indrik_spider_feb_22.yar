@@ -2,7 +2,7 @@ rule zip_unix_63_indrik_spider_feb_22
 {
     meta:
         author = "@cbecks_2"
-        version = "1.0"
+        version = "1.1"
         date = "2022-02-02"
         desc = "Detect zips created by unix v6.3 and out of the Indrik Spider Feb 2022 Campaign. Credit to Tyler Mclellan for the base rule."
     strings:
