@@ -2,7 +2,7 @@ rule csv_launcher_feb22 {
 
     meta:  
         description = "Detects xls documents that are formatted in such a way that causes the document to launch a command."
-        author = "@cbecks_2, credit to Didier Stevens and Xme"
+        author = "@cbecks_2"
         reference1 = "85b1922967d4741eaaf1bc46bc394f39cf50f1fcc238326e22ea9410844087dc"
         reference2 = "https://twitter.com/phage_nz/status/1488310674279530496, 85b1922967d4741eaaf1bc46bc394f39cf50f1fcc238326e22ea9410844087dc"
         reference3 = "https://isc.sans.edu/forums/diary/Developing+YARA+Rules+a+Practical+Example/24158/"
@@ -11,12 +11,12 @@ rule csv_launcher_feb22 {
         date = "2022-02-23"  
     
 	strings:
-        $a = /(^|\n|,)=(\s|\S)*cmd\|/ nocase
-        $b = /(^|\n|,)=(\s|\S)*powershell\|/ nocase
-        $c = /(^|\n|,)=(\s|\S)*pwsh\|/ nocase
-        $d = /(^|\n|,)=(\s|\S)*wscript\|/ nocase
-        $e = /(^|\n|,)=(\s|\S)*cscript\|/ nocase
-        $f = /(^|\n|,)=(\s|\S)*certutil\|/ nocase
+        $a = /(^|\n|,|\s)=(\s|\S)*cmd\|/ nocase
+        $b = /(^|\n|,|\s)=(\s|\S)*powershell\|/ nocase
+        $c = /(^|\n|,|\s)=(\s|\S)*pwsh\|/ nocase
+        $d = /(^|\n|,|\s)=(\s|\S)*wscript\|/ nocase
+        $e = /(^|\n|,|\s)=(\s|\S)*cscript\|/ nocase
+        $f = /(^|\n|,|\s)=(\s|\S)*certutil\|/ nocase
         $g = /(^|\n|,|\s)=(\s|\S)*wmic\|/ nocase
 
 	condition:
