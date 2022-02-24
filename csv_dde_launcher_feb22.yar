@@ -9,6 +9,7 @@ rule csv_launcher_feb22 {
         reference2 = "https://twitter.com/phage_nz/status/1488310674279530496, 85b1922967d4741eaaf1bc46bc394f39cf50f1fcc238326e22ea9410844087dc"
         reference3 = "https://isc.sans.edu/forums/diary/Developing+YARA+Rules+a+Practical+Example/24158/"
         reference4 = "https://www.virustotal.com/gui/search/comment%253A%2522SUSP_PS1_Flags_Indicator_Feb22_1%2522/files"
+	reference5 = "https://blog.reversinglabs.com/blog/cvs-dde-exploits-and-obfuscation"
         tlp = "white"  
         date = "2022-02-23"  
     
