@@ -10,6 +10,7 @@ rule csv_launcher_feb22 {
         reference3 = "https://isc.sans.edu/forums/diary/Developing+YARA+Rules+a+Practical+Example/24158/"
         reference4 = "https://www.virustotal.com/gui/search/comment%253A%2522SUSP_PS1_Flags_Indicator_Feb22_1%2522/files"
 	reference5 = "https://blog.reversinglabs.com/blog/cvs-dde-exploits-and-obfuscation"
+	reference6 = "https://valhalla.nextron-systems.com/info/rule/SUSP_EXPL_MsOffice_CSV_Feb22_1
         tlp = "white"  
         date = "2022-02-23"  
     
