@@ -33,6 +33,6 @@ rule csv_launcher_feb22 {
         $epub1 = "mimetypeapplication/epub" wide ascii nocase
 
 	condition:
-		any of them and filesize < 1000KB and (vt.metadata.file_type == vt.FileType.TEXT or vt.metadata.file_type == vt.FileType.JAVASCRIPT or vt.metadata.file_type == vt.FileType.ZIP) and not any of ($js*) and not $html1 and not $epub1
+		any of them and filesize < 1000KB and (vt.metadata.file_type == vt.FileType.TEXT or vt.metadata.file_type == vt.FileType.JAVASCRIPT) and not any of ($js*) and not $html1 and not $epub1
         
 }
