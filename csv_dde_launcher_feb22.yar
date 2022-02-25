@@ -3,7 +3,7 @@ import "vt"
 rule csv_launcher_feb22 {
 
     meta:  
-        description = "Detects xls documents that are formatted in such a way that causes the document to launch a command."
+        description = "Detects csv documents that are formatted in such a way that causes the document to launch a command."
         author = "@cbecks_2"
         reference1 = "85b1922967d4741eaaf1bc46bc394f39cf50f1fcc238326e22ea9410844087dc"
         reference2 = "https://twitter.com/phage_nz/status/1488310674279530496, 85b1922967d4741eaaf1bc46bc394f39cf50f1fcc238326e22ea9410844087dc"
