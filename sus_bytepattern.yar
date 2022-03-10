@@ -8,9 +8,9 @@ rule sus_bytepattern_ntreadvirtualmemory
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtReadVi" wide ascii
-        $s2 = "rtualMem" wide ascii
-        $s3 = "ory" wide ascii
+        $start = "NtReadVi" ascii
+        $s2 = "rtualMem" ascii
+        $s3 = "ory" ascii
         $not = "NtReadVirtualMemory" ascii wide
 
     condition:
@@ -27,9 +27,9 @@ rule sus_bytepattern_ntprotectvirtualmemory
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtProtec" wide ascii
-        $s2 = "tVirtual" wide ascii
-        $s3 = "ory" wide ascii
+        $start = "NtProtec" ascii
+        $s2 = "tVirtual" ascii
+        $s3 = "ory" ascii
         $not = "NtProtectVirtualMemory" ascii wide
 
     condition:
@@ -45,8 +45,8 @@ rule sus_bytepattern_ntsuspendthread
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtSuspen" wide ascii
-        $s2 = "dThread" wide ascii
+        $start = "NtSuspen" ascii
+        $s2 = "dThread" ascii
         $not = "NtSuspendThread" ascii wide
 
     condition:
@@ -62,8 +62,8 @@ rule sus_bytepattern_ntresumethread
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtResume" wide ascii
-        $s2 = "Thread" wide ascii
+        $start = "NtResume" ascii
+        $s2 = "Thread" ascii
         $not = "NtResumeThread" ascii wide
 
     condition:
@@ -79,9 +79,9 @@ rule sus_bytepattern_ntsetcontextthread
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtSetCon" wide ascii
-        $s2 = "textThre" wide ascii
-        $s3 = "ad" wide ascii
+        $start = "NtSetCon" ascii
+        $s2 = "textThre" ascii
+        $s3 = "ad" ascii
         $not = "NtSetContextThread" ascii wide
 
     condition:
@@ -98,9 +98,9 @@ rule sus_bytepattern_ntqueueapcthreadex
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtQueue" wide ascii
-        $s2 = "pcThread" wide ascii
-        $s3 = "Ex" wide ascii
+        $start = "NtQueue" ascii
+        $s2 = "pcThread" ascii
+        $s3 = "Ex" ascii
         $not = "NtQueueApcThreadEx" ascii wide
 
     condition:
@@ -116,9 +116,9 @@ rule sus_bytepattern_ntmapviewofsectionex
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtMapVie" wide ascii
-        $s2 = "wOfSecti" wide ascii
-        $s3 = "onEx" wide ascii
+        $start = "NtMapVie" ascii
+        $s2 = "wOfSecti" ascii
+        $s3 = "onEx" ascii
         $not = "NtMapViewOfSectionEx" ascii wide
 
     condition:
@@ -134,8 +134,8 @@ rule sus_bytepattern_ntgetcontexthread
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtGetCon" wide ascii
-        $s2 = "textThre" wide ascii
+        $start = "NtGetCon" ascii
+        $s2 = "textThre" ascii
         $not = "NtGetContextThread" ascii wide
 
     condition:
@@ -151,9 +151,9 @@ rule sus_bytepattern_ntallocatevirtualmemoryex
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtAlloca" wide ascii
-        $s2 = "teVirtua" wide ascii
-        $s3 = "lMemoryE" wide ascii
+        $start = "NtAlloca" ascii
+        $s2 = "teVirtua" ascii
+        $s3 = "lMemoryE" ascii
         $not = "NtAllocateVirtualMemoryEx" ascii wide
 
     condition:
@@ -169,9 +169,9 @@ rule sus_bytepattern_ntsetinformationprocess
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtSetInf" wide ascii
-        $s2 = "ormation" wide ascii
-        $s3 = "Process" wide ascii
+        $start = "NtSetInf" ascii
+        $s2 = "ormation" ascii
+        $s3 = "Process" ascii
         $not = "NtSetInformationProcess" ascii wide
 
     condition:
@@ -187,9 +187,9 @@ rule sus_bytepattern_ntmapviewofsection
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtMapVie" wide ascii
-        $s2 = "wOfSecti" wide ascii
-        $s3 = "ion" wide ascii
+        $start = "NtMapVie" ascii
+        $s2 = "wOfSecti" ascii
+        $s3 = "ion" ascii
         $not = "NtMapViewOfSection" ascii wide
 
     condition:
@@ -205,9 +205,9 @@ rule sus_bytepattern_nzwdeviceiocontrolfile
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "ZwDevice" wide ascii
-        $s2 = "IoContro" wide ascii
-        $s3 = "lFile" wide ascii
+        $start = "ZwDevice" ascii
+        $s2 = "IoContro" ascii
+        $s3 = "lFile" ascii
         $not = "ZwDeviceIoControlFile" ascii wide
 
     condition:
@@ -223,9 +223,9 @@ rule sus_bytepattern_ntallocatevirtualmemory
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtAlloca" wide ascii
-        $s2 = "teVirtua" wide ascii
-        $s3 = "lMemory" wide ascii
+        $start = "NtAlloca" ascii
+        $s2 = "teVirtua" ascii
+        $s3 = "lMemory" ascii
         $not = "NtAllocateVirtualMemory" ascii wide
 
     condition:
@@ -241,9 +241,9 @@ rule sus_bytepattern_ntqueryinformationthread
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtQueryI" wide ascii
-        $s2 = "nformati" wide ascii
-        $s3 = "onThread" wide ascii
+        $start = "NtQueryI" ascii
+        $s2 = "nformati" ascii
+        $s3 = "onThread" ascii
         $not = "NtQueryInformationThread" ascii wide
 
     condition:
@@ -259,9 +259,9 @@ rule sus_bytepattern_zwsetinformationthread
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "ZwSetInf" wide ascii
-        $s2 = "ormation" wide ascii
-        $s3 = "Thread" wide ascii
+        $start = "ZwSetInf" ascii
+        $s2 = "ormation" ascii
+        $s3 = "Thread" ascii
         $not = "ZwSetInformationThread" ascii wide
 
     condition:
@@ -277,8 +277,8 @@ rule sus_bytepattern_ntqueueapcthread
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtQueueA" wide ascii
-        $s2 = "pcThread" wide ascii
+        $start = "NtQueueA" ascii
+        $s2 = "pcThread" ascii
         $not = "NtQueueApcThread" ascii wide
 
     condition:
@@ -294,9 +294,9 @@ rule sus_bytepattern_ntunmapviewofsectionex
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "NtUnmapV" wide ascii
-        $s2 = "iewOfSec" wide ascii
-        $s3 = "tionEx" wide ascii
+        $start = "NtUnmapV" ascii
+        $s2 = "iewOfSec" ascii
+        $s3 = "tionEx" ascii
         $not = "NtUnmapViewofSectionEx" ascii wide
 
     condition:
@@ -312,8 +312,8 @@ rule sus_bytepattern_showwindow
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "ShowWind" wide ascii
-        $s2 = "ow" wide ascii
+        $start = "ShowWind" ascii
+        $s2 = "ow" ascii
         $not = "ShowWindow" ascii wide
 
     condition:
@@ -329,8 +329,8 @@ rule sus_bytepattern_getconsolewindow
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "GetConso" wide ascii
-        $s2 = "leWindow" wide ascii
+        $start = "GetConso" ascii
+        $s2 = "leWindow" ascii
         $not = "GetConsoleWindow" ascii wide
 
     condition:
@@ -346,8 +346,8 @@ rule sus_bytepattern_getprocaddress
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "GetProcA" wide ascii
-        $s2 = "ddress" wide ascii
+        $start = "GetProcA" ascii
+        $s2 = "ddress" ascii
         $not = "GetProcAddress" ascii wide
 
     condition:
@@ -363,8 +363,8 @@ rule sus_bytepattern_loadlibrary
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "LoadLibr" wide ascii
-        $s2 = "ary" wide ascii
+        $start = "LoadLibr" ascii
+        $s2 = "ary" ascii
         $not = "LoadLibrary" ascii wide
 
     condition:
@@ -380,8 +380,8 @@ rule sus_bytepattern_internetopena
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "Internet" wide ascii
-        $s2 = "OpenA" wide ascii
+        $start = "Internet" ascii
+        $s2 = "OpenA" ascii
         $not = "InternetOpenA" ascii wide
 
     condition:
@@ -397,8 +397,8 @@ rule sus_bytepattern_internetopenurla
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "Internet" wide ascii
-        $s2 = "OpenUrlA" wide ascii
+        $start = "Internet" ascii
+        $s2 = "OpenUrlA" ascii
         $not = "InternetOpenUrlA" ascii wide
 
     condition:
@@ -414,8 +414,8 @@ rule sus_bytepattern_internetreadfile
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "Internet" wide ascii
-        $s2 = "ReadFile" wide ascii
+        $start = "Internet" ascii
+        $s2 = "ReadFile" ascii
         $not = "InternetReadFile" ascii wide
 
     condition:
@@ -431,9 +431,9 @@ rule sus_bytepattern_internetclosehandle
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "Internet" wide ascii
-        $s2 = "CloseHan" wide ascii
-        $s3 = "dle" wide ascii
+        $start = "Internet" ascii
+        $s2 = "CloseHan" ascii
+        $s3 = "dle" ascii
         $not = "InternetCloseHandle" ascii wide
 
     condition:
@@ -449,8 +449,8 @@ rule sus_bytepattern_createfilea
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "CreateFi" wide ascii
-        $s2 = "leA" wide ascii
+        $start = "CreateFi" ascii
+        $s2 = "leA" ascii
         $not = "CreateFileA" ascii wide
 
     condition:
@@ -466,7 +466,7 @@ rule sus_bytepattern_heapalloc
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "HeapAllo" wide ascii
+        $start = "HeapAllo" ascii
         $not = "HeapAlloc" ascii wide
 
     condition:
@@ -481,7 +481,7 @@ rule sus_bytepattern_writefile
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "WriteFil" wide ascii
+        $start = "WriteFil" ascii
         $not = "WriteFile" ascii wide
 
     condition:
@@ -496,8 +496,8 @@ rule sus_bytepattern_closehandle
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "CloseHan" wide ascii
-        $s2 = "dle" wide ascii
+        $start = "CloseHan" ascii
+        $s2 = "dle" ascii
         $not = "CloseHandle" ascii wide
 
     condition:
@@ -513,8 +513,8 @@ rule sus_bytepattern_virtualalloc
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "VirtualA" wide ascii
-        $s2 = "lloc" wide ascii
+        $start = "VirtualA" ascii
+        $s2 = "lloc" ascii
         $not = "VirtualAlloc" ascii wide
 
     condition:
@@ -530,8 +530,8 @@ rule sus_bytepattern_getprocessheap
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "GetProce" wide ascii
-        $s2 = "rtuassHeaplMem" wide ascii
+        $start = "GetProce" ascii
+        $s2 = "rtuassHeaplMem" ascii
         $not = "GetProcessHeap" ascii wide
 
     condition:
@@ -547,8 +547,8 @@ rule sus_bytepattern_regopenkeyexa
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "RegOpenK" wide ascii
-        $s2 = "eyExA" wide ascii
+        $start = "RegOpenK" ascii
+        $s2 = "eyExA" ascii
         $not = "RegOpenKeyExA" ascii wide
 
     condition:
@@ -564,12 +564,12 @@ rule sus_bytepattern_runkeys
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "SOFTWARE" wide ascii nocase
-        $s2 = "\\Microso" wide ascii nocase
-        $s3 = "\\ft\\Windo" wide ascii nocase
-        $s4 = "ws\\Curre" wide ascii nocase
-        $s5 = "ntVersio" wide ascii nocase
-        $s6 = "n\\Run" wide ascii nocase
+        $start = "SOFTWARE" ascii nocase
+        $s2 = "\\Microso" ascii nocase
+        $s3 = "\\ft\\Windo" ascii nocase
+        $s4 = "ws\\Curre" ascii nocase
+        $s5 = "ntVersio" ascii nocase
+        $s6 = "n\\Run" ascii nocase
         $not1 = "SOFTWARE\\Microsoft\\CurrentVersion\\Run" ascii wide
         $not2 = "SOFTWARE\\Microsoft\\CurrentVersion\\RunOnce" ascii wide
 
@@ -586,8 +586,8 @@ rule sus_bytepattern_regsetkeyvaluea
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "RegSetKe" wide ascii
-        $s2 = "yValueA" wide ascii
+        $start = "RegSetKe" ascii
+        $s2 = "yValueA" ascii
         $not = "RegSetKeyValueA" ascii wide
 
     condition:
@@ -603,8 +603,8 @@ rule sus_bytepattern_exitprocess
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "ExitProc" wide ascii
-        $s2 = "ess" wide ascii
+        $start = "ExitProc" ascii
+        $s2 = "ess" ascii
         $not = "ExitProcess" ascii wide
 
     condition:
@@ -621,8 +621,8 @@ rule sus_bytepattern_createdirectorya
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "CreateDi" wide ascii
-        $s2 = "rectoryA" wide ascii
+        $start = "CreateDi" ascii
+        $s2 = "rectoryA" ascii
         $not = "CreateDirectoryA" ascii wide
 
     condition:
@@ -639,9 +639,9 @@ rule sus_bytepattern_expandenvironmentstrings
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "ExpandEn" wide ascii
-        $s2 = "vironmen" wide ascii
-        $s3 = "tStrings" wide ascii
+        $start = "ExpandEn" ascii
+        $s2 = "vironmen" ascii
+        $s3 = "tStrings" ascii
         $not = "ExpandEnvironmentStrings" ascii wide
 
     condition:
@@ -658,11 +658,23 @@ rule sus_bytepattern_virtualprotect
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
-        $start = "VirtualP" wide ascii
-        $s2 = "rotect" wide ascii
+        $start = "VirtualP" ascii
+        $s2 = "rotect" ascii
         $not = "VirtualProtect" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
+}
+
+rule MainRule
+{
+    meta:
+        author = "@cbecks_2"
+        version = "1.0"
+        date = "2022-03-10"
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+
+    condition:
+        10 of (sus*)
 }
