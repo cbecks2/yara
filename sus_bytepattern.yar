@@ -11,7 +11,7 @@ rule sus_bytepattern_ntreadvirtualmemory
         $start = "NtReadVi" wide ascii
         $s2 = "rtualMem" wide ascii
         $s3 = "ory" wide ascii
-        $not = "NtReadVirtualMemory" fullword
+        $not = "NtReadVirtualMemory" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -30,7 +30,7 @@ rule sus_bytepattern_ntprotectvirtualmemory
         $start = "NtProtec" wide ascii
         $s2 = "tVirtual" wide ascii
         $s3 = "ory" wide ascii
-        $not = "NtProtectVirtualMemory" fullword
+        $not = "NtProtectVirtualMemory" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -47,7 +47,7 @@ rule sus_bytepattern_ntsuspendthread
     strings:
         $start = "NtSuspen" wide ascii
         $s2 = "dThread" wide ascii
-        $not = "NtSuspendThread" fullword
+        $not = "NtSuspendThread" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -64,7 +64,7 @@ rule sus_bytepattern_ntresumethread
     strings:
         $start = "NtResume" wide ascii
         $s2 = "Thread" wide ascii
-        $not = "NtResumeThread" fullword
+        $not = "NtResumeThread" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -82,7 +82,7 @@ rule sus_bytepattern_ntsetcontextthread
         $start = "NtSetCon" wide ascii
         $s2 = "textThre" wide ascii
         $s3 = "ad" wide ascii
-        $not = "NtSetContextThread" fullword
+        $not = "NtSetContextThread" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -101,7 +101,7 @@ rule sus_bytepattern_ntqueueapcthreadex
         $start = "NtQueue" wide ascii
         $s2 = "pcThread" wide ascii
         $s3 = "Ex" wide ascii
-        $not = "NtQueueApcThreadEx" fullword
+        $not = "NtQueueApcThreadEx" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -119,7 +119,7 @@ rule sus_bytepattern_ntmapviewofsectionex
         $start = "NtMapVie" wide ascii
         $s2 = "wOfSecti" wide ascii
         $s3 = "onEx" wide ascii
-        $not = "NtMapViewOfSectionEx" fullword
+        $not = "NtMapViewOfSectionEx" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -136,7 +136,7 @@ rule sus_bytepattern_ntgetcontexthread
     strings:
         $start = "NtGetCon" wide ascii
         $s2 = "textThre" wide ascii
-        $not = "NtGetContextThread" fullword
+        $not = "NtGetContextThread" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -154,7 +154,7 @@ rule sus_bytepattern_ntallocatevirtualmemoryex
         $start = "NtAlloca" wide ascii
         $s2 = "teVirtua" wide ascii
         $s3 = "lMemoryE" wide ascii
-        $not = "NtAllocateVirtualMemoryEx" fullword
+        $not = "NtAllocateVirtualMemoryEx" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -172,7 +172,7 @@ rule sus_bytepattern_ntsetinformationprocess
         $start = "NtSetInf" wide ascii
         $s2 = "ormation" wide ascii
         $s3 = "Process" wide ascii
-        $not = "NtSetInformationProcess" fullword
+        $not = "NtSetInformationProcess" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -190,7 +190,7 @@ rule sus_bytepattern_ntmapviewofsection
         $start = "NtMapVie" wide ascii
         $s2 = "wOfSecti" wide ascii
         $s3 = "ion" wide ascii
-        $not = "NtMapViewOfSection" fullword
+        $not = "NtMapViewOfSection" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -208,7 +208,7 @@ rule sus_bytepattern_nzwdeviceiocontrolfile
         $start = "ZwDevice" wide ascii
         $s2 = "IoContro" wide ascii
         $s3 = "lFile" wide ascii
-        $not = "ZwDeviceIoControlFile" fullword
+        $not = "ZwDeviceIoControlFile" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -226,7 +226,7 @@ rule sus_bytepattern_ntallocatevirtualmemory
         $start = "NtAlloca" wide ascii
         $s2 = "teVirtua" wide ascii
         $s3 = "lMemory" wide ascii
-        $not = "NtAllocateVirtualMemory" fullword
+        $not = "NtAllocateVirtualMemory" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -244,7 +244,7 @@ rule sus_bytepattern_ntqueryinformationthread
         $start = "NtQueryI" wide ascii
         $s2 = "nformati" wide ascii
         $s3 = "onThread" wide ascii
-        $not = "NtQueryInformationThread" fullword
+        $not = "NtQueryInformationThread" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -262,7 +262,7 @@ rule sus_bytepattern_zwsetinformationthread
         $start = "ZwSetInf" wide ascii
         $s2 = "ormation" wide ascii
         $s3 = "Thread" wide ascii
-        $not = "ZwSetInformationThread" fullword
+        $not = "ZwSetInformationThread" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -279,7 +279,7 @@ rule sus_bytepattern_ntqueueapcthread
     strings:
         $start = "NtQueueA" wide ascii
         $s2 = "pcThread" wide ascii
-        $not = "NtQueueApcThread" fullword
+        $not = "NtQueueApcThread" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -297,7 +297,7 @@ rule sus_bytepattern_ntunmapviewofsectionex
         $start = "NtUnmapV" wide ascii
         $s2 = "iewOfSec" wide ascii
         $s3 = "tionEx" wide ascii
-        $not = "NtUnmapViewofSectionEx" fullword
+        $not = "NtUnmapViewofSectionEx" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -314,7 +314,7 @@ rule sus_bytepattern_showwindow
     strings:
         $start = "ShowWind" wide ascii
         $s2 = "ow" wide ascii
-        $not = "ShowWindow" fullword
+        $not = "ShowWindow" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -331,7 +331,7 @@ rule sus_bytepattern_getconsolewindow
     strings:
         $start = "GetConso" wide ascii
         $s2 = "leWindow" wide ascii
-        $not = "GetConsoleWindow" fullword
+        $not = "GetConsoleWindow" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -348,7 +348,7 @@ rule sus_bytepattern_getprocaddress
     strings:
         $start = "GetProcA" wide ascii
         $s2 = "ddress" wide ascii
-        $not = "GetProcAddress" fullword
+        $not = "GetProcAddress" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -365,7 +365,7 @@ rule sus_bytepattern_loadlibrary
     strings:
         $start = "LoadLibr" wide ascii
         $s2 = "ary" wide ascii
-        $not = "LoadLibrary" fullword
+        $not = "LoadLibrary" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -382,7 +382,7 @@ rule sus_bytepattern_internetopena
     strings:
         $start = "Internet" wide ascii
         $s2 = "OpenA" wide ascii
-        $not = "InternetOpenA" fullword
+        $not = "InternetOpenA" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -399,7 +399,7 @@ rule sus_bytepattern_internetopenurla
     strings:
         $start = "Internet" wide ascii
         $s2 = "OpenUrlA" wide ascii
-        $not = "InternetOpenUrlA" fullword
+        $not = "InternetOpenUrlA" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -416,7 +416,7 @@ rule sus_bytepattern_internetreadfile
     strings:
         $start = "Internet" wide ascii
         $s2 = "ReadFile" wide ascii
-        $not = "InternetReadFile" fullword
+        $not = "InternetReadFile" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -434,7 +434,7 @@ rule sus_bytepattern_internetclosehandle
         $start = "Internet" wide ascii
         $s2 = "CloseHan" wide ascii
         $s3 = "dle" wide ascii
-        $not = "InternetCloseHandle" fullword
+        $not = "InternetCloseHandle" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -451,7 +451,7 @@ rule sus_bytepattern_createfilea
     strings:
         $start = "CreateFi" wide ascii
         $s2 = "leA" wide ascii
-        $not = "CreateFileA" fullword
+        $not = "CreateFileA" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -467,7 +467,7 @@ rule sus_bytepattern_heapalloc
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
         $start = "HeapAllo" wide ascii
-        $not = "HeapAlloc" fullword
+        $not = "HeapAlloc" ascii wide
 
     condition:
         $start and not $not and filesize < 1000KB
@@ -482,7 +482,7 @@ rule sus_bytepattern_writefile
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
     strings:
         $start = "WriteFil" wide ascii
-        $not = "WriteFile" fullword
+        $not = "WriteFile" ascii wide
 
     condition:
         $start and $not and filesize < 1000KB
@@ -498,7 +498,7 @@ rule sus_bytepattern_closehandle
     strings:
         $start = "CloseHan" wide ascii
         $s2 = "dle" wide ascii
-        $not = "CloseHandle" fullword
+        $not = "CloseHandle" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -515,7 +515,7 @@ rule sus_bytepattern_virtualalloc
     strings:
         $start = "VirtualA" wide ascii
         $s2 = "lloc" wide ascii
-        $not = "VirtualAlloc" fullword
+        $not = "VirtualAlloc" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -532,7 +532,7 @@ rule sus_bytepattern_getprocessheap
     strings:
         $start = "GetProce" wide ascii
         $s2 = "rtuassHeaplMem" wide ascii
-        $not = "GetProcessHeap" fullword
+        $not = "GetProcessHeap" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -549,7 +549,7 @@ rule sus_bytepattern_regopenkeyexa
     strings:
         $start = "RegOpenK" wide ascii
         $s2 = "eyExA" wide ascii
-        $not = "RegOpenKeyExA" fullword
+        $not = "RegOpenKeyExA" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -570,8 +570,8 @@ rule sus_bytepattern_runkeys
         $s4 = "ws\\Curre" wide ascii nocase
         $s5 = "ntVersio" wide ascii nocase
         $s6 = "n\\Run" wide ascii nocase
-        $not1 = "SOFTWARE\\Microsoft\\CurrentVersion\\Run" fullword
-        $not2 = "SOFTWARE\\Microsoft\\CurrentVersion\\RunOnce" fullword
+        $not1 = "SOFTWARE\\Microsoft\\CurrentVersion\\Run" ascii wide
+        $not2 = "SOFTWARE\\Microsoft\\CurrentVersion\\RunOnce" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 and @s4 and @s5 and @s6  < (@start[i]+60) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -588,7 +588,7 @@ rule sus_bytepattern_regsetkeyvaluea
     strings:
         $start = "RegSetKe" wide ascii
         $s2 = "yValueA" wide ascii
-        $not = "RegSetKeyValueA" fullword
+        $not = "RegSetKeyValueA" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -605,7 +605,7 @@ rule sus_bytepattern_exitprocess
     strings:
         $start = "ExitProc" wide ascii
         $s2 = "ess" wide ascii
-        $not = "ExitProcess" fullword
+        $not = "ExitProcess" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -623,7 +623,7 @@ rule sus_bytepattern_createdirectorya
     strings:
         $start = "CreateDi" wide ascii
         $s2 = "rectoryA" wide ascii
-        $not = "CreateDirectoryA" fullword
+        $not = "CreateDirectoryA" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -642,7 +642,7 @@ rule sus_bytepattern_expandenvironmentstrings
         $start = "ExpandEn" wide ascii
         $s2 = "vironmen" wide ascii
         $s3 = "tStrings" wide ascii
-        $not = "ExpandEnvironmentStrings" fullword
+        $not = "ExpandEnvironmentStrings" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
@@ -660,7 +660,7 @@ rule sus_bytepattern_virtualprotect
     strings:
         $start = "VirtualP" wide ascii
         $s2 = "rotect" wide ascii
-        $not = "VirtualProtect" fullword
+        $not = "VirtualProtect" ascii wide
 
     condition:
         uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
