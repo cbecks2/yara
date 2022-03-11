@@ -14,7 +14,7 @@ rule sus_bytepattern_ntreadvirtualmemory
         $not = "NtReadVirtualMemory" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -33,7 +33,7 @@ rule sus_bytepattern_ntprotectvirtualmemory
         $not = "NtProtectVirtualMemory" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -50,7 +50,7 @@ rule sus_bytepattern_ntsuspendthread
         $not = "NtSuspendThread" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -67,7 +67,7 @@ rule sus_bytepattern_ntresumethread
         $not = "NtResumeThread" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -85,7 +85,7 @@ rule sus_bytepattern_ntsetcontextthread
         $not = "NtSetContextThread" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -104,7 +104,7 @@ rule sus_bytepattern_ntqueueapcthreadex
         $not = "NtQueueApcThreadEx" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -122,7 +122,7 @@ rule sus_bytepattern_ntmapviewofsectionex
         $not = "NtMapViewOfSectionEx" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -139,7 +139,7 @@ rule sus_bytepattern_ntgetcontexthread
         $not = "NtGetContextThread" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -157,7 +157,7 @@ rule sus_bytepattern_ntallocatevirtualmemoryex
         $not = "NtAllocateVirtualMemoryEx" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -175,7 +175,7 @@ rule sus_bytepattern_ntsetinformationprocess
         $not = "NtSetInformationProcess" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -193,7 +193,7 @@ rule sus_bytepattern_ntmapviewofsection
         $not = "NtMapViewOfSection" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -211,7 +211,7 @@ rule sus_bytepattern_nzwdeviceiocontrolfile
         $not = "ZwDeviceIoControlFile" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -229,7 +229,7 @@ rule sus_bytepattern_ntallocatevirtualmemory
         $not = "NtAllocateVirtualMemory" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -247,7 +247,7 @@ rule sus_bytepattern_ntqueryinformationthread
         $not = "NtQueryInformationThread" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -265,7 +265,7 @@ rule sus_bytepattern_zwsetinformationthread
         $not = "ZwSetInformationThread" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -282,7 +282,7 @@ rule sus_bytepattern_ntqueueapcthread
         $not = "NtQueueApcThread" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -300,7 +300,7 @@ rule sus_bytepattern_ntunmapviewofsectionex
         $not = "NtUnmapViewofSectionEx" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -317,7 +317,7 @@ rule sus_bytepattern_showwindow
         $not = "ShowWindow" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -334,7 +334,7 @@ rule sus_bytepattern_getconsolewindow
         $not = "GetConsoleWindow" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -351,7 +351,7 @@ rule sus_bytepattern_getprocaddress
         $not = "GetProcAddress" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -368,7 +368,7 @@ rule sus_bytepattern_loadlibrary
         $not = "LoadLibrary" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -385,7 +385,7 @@ rule sus_bytepattern_internetopena
         $not = "InternetOpenA" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -402,7 +402,7 @@ rule sus_bytepattern_internetopenurla
         $not = "InternetOpenUrlA" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -419,7 +419,7 @@ rule sus_bytepattern_internetreadfile
         $not = "InternetReadFile" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -437,7 +437,7 @@ rule sus_bytepattern_internetclosehandle
         $not = "InternetCloseHandle" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -454,7 +454,7 @@ rule sus_bytepattern_createfilea
         $not = "CreateFileA" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -473,20 +473,6 @@ rule sus_bytepattern_heapalloc
         $start and not $not and filesize < 1000KB
 }
 
-rule sus_bytepattern_writefile
-{
-    meta:
-        author = "@cbecks_2"
-        version = "1.0"
-        date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
-    strings:
-        $start = "WriteFil" ascii
-        $not = "WriteFile" ascii wide
-
-    condition:
-        $start and $not and filesize < 1000KB
-}
 
 rule sus_bytepattern_closehandle
 {
@@ -501,7 +487,7 @@ rule sus_bytepattern_closehandle
         $not = "CloseHandle" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -518,7 +504,7 @@ rule sus_bytepattern_virtualalloc
         $not = "VirtualAlloc" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -535,7 +521,7 @@ rule sus_bytepattern_getprocessheap
         $not = "GetProcessHeap" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -552,7 +538,7 @@ rule sus_bytepattern_regopenkeyexa
         $not = "RegOpenKeyExA" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -574,7 +560,7 @@ rule sus_bytepattern_runkeys
         $not2 = "SOFTWARE\\Microsoft\\CurrentVersion\\RunOnce" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 and @s4 and @s5 and @s6  < (@start[i]+60) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 and @s4 and @s5 and @s6  < (@start[i]+60) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not1 and not $not2 and filesize < 1000KB
 }
 
@@ -591,7 +577,7 @@ rule sus_bytepattern_regsetkeyvaluea
         $not = "RegSetKeyValueA" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
@@ -608,7 +594,7 @@ rule sus_bytepattern_exitprocess
         $not = "ExitProcess" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 
 }
@@ -626,7 +612,7 @@ rule sus_bytepattern_createdirectorya
         $not = "CreateDirectoryA" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2  < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 
 }
@@ -645,7 +631,7 @@ rule sus_bytepattern_expandenvironmentstrings
         $not = "ExpandEnvironmentStrings" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 
 }
@@ -663,18 +649,19 @@ rule sus_bytepattern_virtualprotect
         $not = "VirtualProtect" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and (pe.number_of_imports < 1) and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
-rule MainRule
+rule high_count_sus_bytepattern_matches
 {
     meta:
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
         desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        requires = "yara 4.2"
 
     condition:
-        10 of (sus*)
+        10 of (sus_*)
 }
