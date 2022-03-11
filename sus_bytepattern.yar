@@ -6,7 +6,10 @@ rule sus_bytepattern_ntreadvirtualmemory
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtReadVi" ascii
         $s2 = "rtualMem" ascii
@@ -25,7 +28,10 @@ rule sus_bytepattern_ntprotectvirtualmemory
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtProtec" ascii
         $s2 = "tVirtual" ascii
@@ -43,7 +49,10 @@ rule sus_bytepattern_ntsuspendthread
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtSuspen" ascii
         $s2 = "dThread" ascii
@@ -60,7 +69,10 @@ rule sus_bytepattern_ntresumethread
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtResume" ascii
         $s2 = "Thread" ascii
@@ -77,7 +89,10 @@ rule sus_bytepattern_ntsetcontextthread
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtSetCon" ascii
         $s2 = "textThre" ascii
@@ -96,7 +111,10 @@ rule sus_bytepattern_ntqueueapcthreadex
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtQueue" ascii
         $s2 = "pcThread" ascii
@@ -114,7 +132,10 @@ rule sus_bytepattern_ntmapviewofsectionex
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtMapVie" ascii
         $s2 = "wOfSecti" ascii
@@ -132,7 +153,10 @@ rule sus_bytepattern_ntgetcontexthread
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtGetCon" ascii
         $s2 = "textThre" ascii
@@ -149,7 +173,10 @@ rule sus_bytepattern_ntallocatevirtualmemoryex
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtAlloca" ascii
         $s2 = "teVirtua" ascii
@@ -167,7 +194,10 @@ rule sus_bytepattern_ntsetinformationprocess
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtSetInf" ascii
         $s2 = "ormation" ascii
@@ -185,7 +215,10 @@ rule sus_bytepattern_ntmapviewofsection
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtMapVie" ascii
         $s2 = "wOfSecti" ascii
@@ -203,7 +236,10 @@ rule sus_bytepattern_nzwdeviceiocontrolfile
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "ZwDevice" ascii
         $s2 = "IoContro" ascii
@@ -221,7 +257,10 @@ rule sus_bytepattern_ntallocatevirtualmemory
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtAlloca" ascii
         $s2 = "teVirtua" ascii
@@ -239,7 +278,10 @@ rule sus_bytepattern_ntqueryinformationthread
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtQueryI" ascii
         $s2 = "nformati" ascii
@@ -257,7 +299,10 @@ rule sus_bytepattern_zwsetinformationthread
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "ZwSetInf" ascii
         $s2 = "ormation" ascii
@@ -275,7 +320,10 @@ rule sus_bytepattern_ntqueueapcthread
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtQueueA" ascii
         $s2 = "pcThread" ascii
@@ -292,7 +340,10 @@ rule sus_bytepattern_ntunmapviewofsectionex
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "NtUnmapV" ascii
         $s2 = "iewOfSec" ascii
@@ -310,7 +361,10 @@ rule sus_bytepattern_showwindow
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+        
     strings:
         $start = "ShowWind" ascii
         $s2 = "ow" ascii
@@ -327,7 +381,10 @@ rule sus_bytepattern_getconsolewindow
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "GetConso" ascii
         $s2 = "leWindow" ascii
@@ -344,7 +401,10 @@ rule sus_bytepattern_getprocaddress
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "GetProcA" ascii
         $s2 = "ddress" ascii
@@ -361,7 +421,10 @@ rule sus_bytepattern_loadlibrary
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "LoadLibr" ascii
         $s2 = "ary" ascii
@@ -378,7 +441,10 @@ rule sus_bytepattern_internetopena
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "Internet" ascii
         $s2 = "OpenA" ascii
@@ -395,7 +461,10 @@ rule sus_bytepattern_internetopenurla
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "Internet" ascii
         $s2 = "OpenUrlA" ascii
@@ -412,7 +481,10 @@ rule sus_bytepattern_internetreadfile
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "Internet" ascii
         $s2 = "ReadFile" ascii
@@ -429,7 +501,10 @@ rule sus_bytepattern_internetclosehandle
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "Internet" ascii
         $s2 = "CloseHan" ascii
@@ -447,7 +522,10 @@ rule sus_bytepattern_createfilea
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "CreateFi" ascii
         $s2 = "leA" ascii
@@ -464,7 +542,10 @@ rule sus_bytepattern_heapalloc
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "HeapAllo" ascii
         $not = "HeapAlloc" ascii wide
@@ -480,7 +561,10 @@ rule sus_bytepattern_closehandle
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "CloseHan" ascii
         $s2 = "dle" ascii
@@ -497,7 +581,10 @@ rule sus_bytepattern_virtualalloc
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "VirtualA" ascii
         $s2 = "lloc" ascii
@@ -514,7 +601,10 @@ rule sus_bytepattern_getprocessheap
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "GetProce" ascii
         $s2 = "rtuassHeaplMem" ascii
@@ -531,7 +621,10 @@ rule sus_bytepattern_regopenkeyexa
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "RegOpenK" ascii
         $s2 = "eyExA" ascii
@@ -548,7 +641,10 @@ rule sus_bytepattern_runkeys
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "SOFTWARE" ascii nocase
         $s2 = "\\Microso" ascii nocase
@@ -570,7 +666,10 @@ rule sus_bytepattern_regsetkeyvaluea
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "RegSetKe" ascii
         $s2 = "yValueA" ascii
@@ -587,7 +686,10 @@ rule sus_bytepattern_exitprocess
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "ExitProc" ascii
         $s2 = "ess" ascii
@@ -605,7 +707,10 @@ rule sus_bytepattern_createdirectorya
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "CreateDi" ascii
         $s2 = "rectoryA" ascii
@@ -623,7 +728,10 @@ rule sus_bytepattern_expandenvironmentstrings
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "ExpandEn" ascii
         $s2 = "vironmen" ascii
@@ -642,7 +750,10 @@ rule sus_bytepattern_virtualprotect
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
+
     strings:
         $start = "VirtualP" ascii
         $s2 = "rotect" ascii
@@ -653,14 +764,15 @@ rule sus_bytepattern_virtualprotect
         and not $not and filesize < 1000KB
 }
 
-rule high_count_sus_bytepattern_matches
+rule high_count_sus_bytepattern_match
 {
     meta:
         author = "@cbecks_2"
         version = "1.0"
         date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC)."
-        requires = "yara 4.2"
+        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). 
+                The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
+        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
 
     condition:
         10 of (sus_*)
