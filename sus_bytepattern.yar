@@ -491,24 +491,6 @@ rule sus_bytepattern_internetclosehandle
         and not $not and filesize < 1000KB
 }
 
-rule sus_bytepattern_createfilea
-{
-    meta:
-        author = "@cbecks_2"
-        version = "1.0"
-        date = "2022-03-10"
-        desc = "x64 has 8 byte registers. This rule looks for 8 byte string patterns that may resemble suspicious API calls in Position Independent Code (PIC). The filter for no imports exists because KnownDLLs are cached in virtual memory and shared with all processes."
-        reference = "https://docs.microsoft.com/en-us/archive/blogs/larryosterman/what-are-known-dlls-anyway"
-
-    strings:
-        $start = "CreateFi" ascii
-        $s2 = "leA" ascii
-        $not = "CreateFileA" ascii wide
-
-    condition:
-        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 < (@start[i]+20) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
-        and not $not and filesize < 1000KB
-}
 
 rule sus_bytepattern_heapalloc
 {
