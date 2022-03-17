@@ -16,7 +16,7 @@ rule sus_bytepattern_ntreadvirtualmemory
         $not = "NtReadVirtualMemory" ascii wide
 
     condition:
-        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
+        uint16(0) == 0x5a4d and pe.number_of_imports < 1 and pe.number_of_signatures < 1 and for all i in (1..#start): ( @s2 and @s3 < (@start[i]+40) ) // For all matches on $start, make sure the offsets of the remaining patterns are within X bytes.
         and not $not and filesize < 1000KB
 }
 
