@@ -24,7 +24,7 @@ def remove_incompatible_imports(files):
 	for yara_file in files:
 		with open(yara_file, 'r') as fd:
 			yara_in_file = fd.read()
-			if not (("import \"math\"" in yara_in_file) or ("import \"cuckoo\"" in yara_in_file) or ("import \"hash\"" in yara_in_file) or ("imphash" in yara_in_file)):
+			if not (("import \"cuckoo\"" in yara_in_file)):
 				filtered_files.append(yara_file)
 	return filtered_files
 
