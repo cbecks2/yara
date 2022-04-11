@@ -3,7 +3,7 @@ import "vt"
 rule mycompany_internal {
    meta:
       description = "Internal *My Company Here* Strings for Live and Retro Hunting"
-      author = "@cbecks2"
+      author = "@cbecks_2"
       reference = "Internal"
       date = "2022-04-10"
    strings:
