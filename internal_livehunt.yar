@@ -16,7 +16,7 @@ rule mycompany_internal {
 
    // Email Addresses and UPNs
       $s5 = "@mydomain.com" wide ascii
-      $s6 = "@subdomain.myinternaldomain.com" wide ascii
+      $s6 = "@myinternaldomain.myroot.com" wide ascii
 
    // ProofPoint Secure Email
       $s7="securemail.mydomain.com" wide ascii
