@@ -26,18 +26,19 @@ rule HTML_Smuggling {
         $b6 = { 63 6F 6E 65 63 74 69 78 } // hex of VHD File Signature
         $b7 = "vhdxfile" base64 base64wide // ascii in VHDX File Signature
         $b8 = { 76 68 64 78 66 69 6C 65 } // hex of VHDX of File Signature
-        $b9 = { 50 4B 03 04 } //zip
-        $b10 = "UEsDBB" // base64 representation of 504B0404 (zip)
-        $b11 = { 50 4B 4C 49 54 45 } //zip
-        $b12 = "UEtMSVRF" // base64 representation of 504B4C495445 (zip)
-        $b13 = { 50 4B 53 70 05 } //zip
-        $b14 = "UEtTcAU" // base64 representation of 504B537005 (zip)
-        $b15 = { 50 4b 05 06 } //zip
-        $b16 = "UEsFBg" // base64 representation of 504B0506 (zip)
-        $b17 = { 50 4b 07 08 } //zip
-        $b18 = "UEsHCA" //base64 representation of 404B0708 (zip)
-        $b19 = { 57 69 6e 5a 69 70 }
-        $b20 = "V2luWmlw" // base64 representation of 57696E5A6970 (zip)
+        $b9 = ".ZIP\"" ascii wide nocase
+        $b10 = { 50 4B 03 04 } //zip
+        $b11 = "UEsDBB" // base64 representation of 504B0404 (zip)
+        $b12 = { 50 4B 4C 49 54 45 } //zip
+        $b13 = "UEtMSVRF" // base64 representation of 504B4C495445 (zip)
+        $b14 = { 50 4B 53 70 05 } //zip
+        $b15 = "UEtTcAU" // base64 representation of 504B537005 (zip)
+        $b16 = { 50 4b 05 06 } //zip
+        $b17 = "UEsFBg" // base64 representation of 504B0506 (zip)
+        $b18 = { 50 4b 07 08 } //zip
+        $b19 = "UEsHCA" //base64 representation of 404B0708 (zip)
+        $b20 = { 57 69 6e 5a 69 70 }
+        $b21 = "V2luWmlw" // base64 representation of 57696E5A6970 (zip)
 
 
         $c1 = "The file has been uploaded successfully," ascii
