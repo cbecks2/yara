@@ -65,5 +65,5 @@ rule HTML_Smuggling {
 
       
     condition:
-        filesize < 5MB and all of ($a*) and any of ($b*) and any of ($c*)
+        filesize < 6MB and all of ($a*) and any of ($b*) and any of ($c*)
 }
